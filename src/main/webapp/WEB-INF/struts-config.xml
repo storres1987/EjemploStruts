@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="VerDatosUsu" type="es.open4job.web.action.VerDatosUsu" />
+	</form-beans>
+	<action-mappings>
+		<action path="/helloWorld" type="es.open4job.web.action.HelloWorldAction"
+			name="VerDatosUsu">
+			<forward name="success" path="/verdatos.jsp" />
+		</action>
+		<action path="/helloWorld"
+		type="es.open4job.web.action.HelloWorldAction"
+		 name="VerDatosUsu" input="/error.jsp"/>
+	</action-mappings>
+	
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml, /WEB-INF/validator-user.xml" />
+	</plug-in>
+
+</struts-config>
